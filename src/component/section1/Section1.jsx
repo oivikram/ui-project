@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Page1cntent from './Page1cntent'
+import Pagecontent from './Pagecontent'
 
-const Section1 = () => {
+const Section1 = (props) => {
   return (
-    <div className='h-screen w-full bg-gray-800 text-2xl text-white'>
+    <div className='h-screen w-full bg-white text-2xl'>
       <Navbar />
-      <Page1cntent />
+      <Pagecontent user={props.user} />
     </div>
   )
 }

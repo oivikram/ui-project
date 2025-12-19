@@ -1,12 +1,89 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# UI Project (React + Vite)
 
-Currently, two official plugins are available:
+A small React UI playground built with Vite + Tailwind CSS. The UI is component-driven and demonstrates passing data (like image URLs, tags, colors, and numbers) down into reusable card components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React (Vite)
+- Tailwind CSS
+- ESLint
+- Remix Icon
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ (recommended)
+- npm (comes with Node)
+
+### Install
+
+```bash
+npm install
+```
+
+### Run Dev Server
+
+```bash
+npm run dev
+```
+
+Then open the URL shown in the terminal (usually `http://localhost:5173`).
+
+## Scripts
+
+- `npm run dev` — start Vite dev server
+- `npm run build` — create a production build
+- `npm run preview` — preview the production build locally
+- `npm run lint` — run ESLint over the project
+
+## Project Structure
+
+```text
+src/
+	App.jsx
+	main.jsx
+	index.css
+	component/
+		section1/
+			Section1.jsx
+			Pagecontent.jsx
+			Navbar.jsx
+			Leftcontent.jsx
+			Lefthead.jsx
+			Rightcontent.jsx
+			Rightcard.jsx
+			Togg.jsx
+		section2/
+			Section2.jsx
+public/
+index.html
+```
+
+## Key Components
+
+- `App.jsx`
+	- Defines the `user` array (objects like `{ img, tag, color, num }`).
+	- Passes `user` into `Section1`.
+
+- `Rightcontent.jsx`
+	- Receives the `user` array via props.
+	- Passes each user's `img`, `tag`, `color`, and `num` into `Rightcard`.
+
+- `Rightcard.jsx`
+	- A reusable card component.
+	- Renders the background image and uses the props to display the tag/number.
+
+## Notes
+
+- If a card shows `undefined`, make sure that user object includes the property (for example `num`).
+- If images don’t show, confirm the `img` URL is correct and accessible.
+
+## Contributing
+
+Feel free to open a PR for improvements or refactors.
+
+## License
+
+This project is for learning/demo purposes.
